@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class Solution :
 	def isValidSudoku ( self , board ) :
 		"""
@@ -7,39 +8,51 @@ class Solution :
 		:rtype: bool
 		"""
 		flag = True
-		for i in range(len(board)):
-			vis = defaultdict(int)
-			for j in range(len(board[i])):
-				if board[i][j] == '.':
+		for i in range ( 9 ) :
+			vis = defaultdict ( int )
+			for j in range ( 9 ) :
+				if board [ i ] [ j ] == '.' :
 					continue
-				elif vis[board[i][j]] == 0:
-					vis[board[i][j]] = 1
-				else:
+				elif vis [ int ( board [ i ] [ j ] ) ] == 0 :
+					vis [ int ( board [ i ] [ j ] ) ] = 1
+				else :
 					flag = False
 					break
 		
-		for j in range(len(board)):
-			vis = defaultdict(int)
-			for i in range(len(board[j])):
-				if board[i][j] == '.':
+		for j in range ( len ( board ) ) :
+			vis = defaultdict ( int )
+			for i in range ( len ( board [ j ] ) ) :
+				if board [ i ] [ j ] == '.' :
 					continue
-				elif vis[board[i][j]] == 0:
-					vis[board[i][j]] = 1
-				else:
+				elif vis [ int ( board [ i ] [ j ] ) ] == 0 :
+					vis [ int ( board [ i ] [ j ] ) ] = 1
+				else :
 					flag = False
 					break
 		
-		for i in range(0,3,9):
-			for j in range(0,3,9):
-				vis = defaultdict(int)
-				for ii in range(i,i+3):
-					for jj in range(j,j+3):
+		for i in range ( 0 , 9 , 3 ) :
+			for j in range ( 0 , 9 , 3 ) :
+				vis = defaultdict ( int )
+				for ii in range ( i , i + 3 ) :
+					for jj in range ( j , j + 3 ) :
 						if board [ ii ] [ jj ] == '.' :
 							continue
-						elif vis [ board [ i ] [ j ] ] == 0 :
-							vis [ board [ i ] [ j ] ] = 1
+						elif vis [ int ( board [ ii ] [ jj ] ) ] == 0 :
+							vis [ int ( board [ ii ] [ jj ] ) ] = 1
 						else :
 							flag = False
 							break
 		return flag
-			
+
+
+board = [ [ "." , "." , "." , "." , "5" , "." , "." , "1" , "." ] ,
+          [ "." , "4" , "." , "3" , "." , "." , "." , "." , "." ] ,
+          [ "." , "." , "." , "." , "." , "3" , "." , "." , "1" ] ,
+          [ "8" , "." , "." , "." , "." , "." , "." , "2" , "." ] ,
+          [ "." , "." , "2" , "." , "7" , "." , "." , "." , "." ] ,
+          [ "." , "1" , "5" , "." , "." , "." , "." , "." , "." ] ,
+          [ "." , "." , "." , "." , "." , "2" , "." , "." , "." ] ,
+          [ "." , "2" , "." , "9" , "." , "." , "." , "." , "." ] ,
+          [ "." , "." , "4" , "." , "." , "." , "." , "." , "." ] ]
+a = Solution ( )
+print ( a.isValidSudoku ( board ) )
