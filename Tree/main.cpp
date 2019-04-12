@@ -54,6 +54,59 @@ class Solution
 		}
 		return false;
 	}
+	bool mirror (TreeNode *left_tree, TreeNode *right_tree)
+	{
+		if (left_tree == nullptr && right_tree == nullptr)
+		{
+			return true;
+		}
+		else if (left_tree == nullptr || right_tree == nullptr)
+		{
+			return false;
+		}
+		else
+		{
+			return left_tree->val == right_tree->val && mirror (left_tree->left, right_tree->right)
+			       && mirror (right_tree->left, left_tree->right);
+		}
+	}
+	bool isSymmetric (TreeNode *root)
+	{
+		return mirror (root, root);
+	}
+	void walker (TreeNode *root, int depth, vector<vector<int>> &ans)
+	{
+		if (root == nullptr)
+		{
+			return;
+		}
+		if (depth >= ans.size ())
+		{
+			ans.push_back (vector<int> {});
+		}
+		ans[depth].push_back (root->val);
+		walker (root->left, depth + 1, ans);
+		walker (root->right, depth + 1, ans);
+	}
+	vector<vector<int>> levelOrder (TreeNode *root)
+	{
+		vector<vector<int>> ans;
+		walker (root, 0, ans);
+		return ans;
+	}
+	TreeNode *sortedArrayToBST (vector<int> &nums)
+	{
+		return sortedArrayToBST (nums, 0, nums.size() - 1);
+	}
+	TreeNode *sortedArrayToBST (vector<int> &nums, int l, int r)
+	{
+		if (r < l) return nullptr;
+		int mid = l + ((r - l) >> 1);
+		TreeNode *root = new TreeNode (nums[mid]);
+		root->left = sortedArrayToBST (nums, l, mid - 1);
+		root->right = sortedArrayToBST (nums, mid + 1, r);
+		return root;
+	}
 };
 
 void trimLeftTrailingSpaces (string &input)
