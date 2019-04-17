@@ -167,6 +167,56 @@ class Solution
 		}
 		return ans + 1;
 	}
+	TreeNode* recoverFromPreorder(string S)
+	{
+		std::stack<map<TreeNode *, int>> st;
+		int size = S.size();
+		if (size < 1)
+		{
+			return nullptr;
+		}
+		int pos = 0;
+		int last = 0;
+		while(pos < size && S[pos] != '-')
+		{
+			pos ++;
+		}
+		int val = stoi(S.substr(last, last - pos));
+		TreeNode *root = new TreeNode(val);
+		st.push({root, 0});
+		int depth = 0;
+		TreeNode *cur = root;
+		while(pos < size)
+		{
+			while(pos < size && S[pos] == '-')	
+			{
+				pos ++;
+				depth ++;
+			}
+			last = pos;
+			while(pos < size && S[pos] != '-')	
+			{
+				pos ++;
+			}
+			val = stoi(S.substr(last,pos - last));
+			if (depth > st.top().second)
+			{
+				TreeNode *child = new TreeNode(val);
+				cur->left = child;
+				st.push({cur,depth});	
+			}
+			else{
+				while(depth <= st.top().second)
+				{
+					st.pop();
+				}
+				TreeNode *child = new TreeNode(val);	
+				cur->right = child;
+				st.push({cur, depth});	
+			}
+		}
+		return root;
+	}
 };
 
 int main ()

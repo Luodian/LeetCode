@@ -40,6 +40,31 @@ There are few existing solutions:
 
    Also, we can use quick power multipy method to accelerate above progression to $O(log(n))$ time.
 
+### Rob
+
+<https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/23/dynamic-programming/57/>
+
+Use dp[i] to represent the **optimal value** between choose $v_{i-1} \ or \ v_{i-2} + A_{i}$.
+
+```cpp
+	int rob(vector<int>& nums) {
+		int n = nums.size();
+		int dp[n+10];
+		memset(dp,0,sizeof(dp));
+		dp[0] = nums[0];
+		dp[1] = nums[1];
+		int ans = 0;
+		for (int i = 2; i < n; ++i)	
+		{
+			dp[i] = max(dp[i], dp[i-1]);	
+			ans = max(ans, dp[i]);
+		}
+		return ans;
+    }
+```
+
+
+
 ## Weekly Contest 132
 
 ### Longest Arithmetic Sequence
@@ -65,8 +90,6 @@ By using 2-d array counter\[i][diff] to represent current longest length in cond
 		return ans + 1;
 	}
 ```
-
-
 
 
 
