@@ -76,106 +76,127 @@ string removeOuterParentheses (string S)
 }
 class Solution {
 	public:
-	static bool cmp (vector<int> &a, vector<int> &b)
-	{
-		return abs(a[0] - a[1]) > abs(b[0] - b[1]);
-	}
-	int twoCitySchedCost (vector<vector<int>> &costs)
-	{
-		int ans = 0;
-		sort(costs.begin(), costs.end(), cmp);
-		for (int i = 0; i < costs.size(); ++i)
+		static bool cmp (vector<int> &a, vector<int> &b)
 		{
-			cout<<costs[i][0]<<" "<<costs[i][1]<<endl;
+			return abs(a[0] - a[1]) > abs(b[0] - b[1]);
 		}
-		int cntA = 0;
-		int cntB = 0;
-		for (int i = 0; i < costs.size(); ++i)
+		int twoCitySchedCost (vector<vector<int>> &costs)
 		{
-			if (costs[i][0] < costs[i][1])
+			int ans = 0;
+			sort(costs.begin(), costs.end(), cmp);
+			for (int i = 0; i < costs.size(); ++i)
 			{
-				if (cntA != costs.size() / 2)
-				{
-					ans += costs[i][0];
-					cntA += 1;
-				}
-				else ans += costs[i][1]; cntB += 1;
+				cout<<costs[i][0]<<" "<<costs[i][1]<<endl;
 			}
-			else
+			int cntA = 0;
+			int cntB = 0;
+			for (int i = 0; i < costs.size(); ++i)
 			{
-				if (cntB != costs.size() / 2)
+				if (costs[i][0] < costs[i][1])
 				{
-					ans += costs[i][1];
-					cntB += 1;
+					if (cntA != costs.size() / 2)
+					{
+						ans += costs[i][0];
+						cntA += 1;
+					}
+					else ans += costs[i][1]; cntB += 1;
 				}
 				else
 				{
-					ans += costs[i][0];
-					cntA += 1;
+					if (cntB != costs.size() / 2)
+					{
+						ans += costs[i][1];
+						cntB += 1;
+					}
+					else
+					{
+						ans += costs[i][0];
+						cntA += 1;
+					}
 				}
 			}
+			return ans;
 		}
-		return ans;
-	}
-	static bool cell_cmp(vector<int> &a, vector<int> &b, int g_r0, int g_c0)
-	{
-		return (abs(a[0] - g_r0) + abs(a[1] - g_c0)) < (abs(b[0] - g_r0) + abs(b[1] - g_c0));
-	}
-	struct Node
-	{
-		int r,c;
-		int r0,c0;
-		bool operator <(Node a) const  
+		static bool cell_cmp(vector<int> &a, vector<int> &b, int g_r0, int g_c0)
 		{
-        	return abs(r - r0) + abs(c - c0) < abs(a.r - r0) + abs(a.c - c0);
+			return (abs(a[0] - g_r0) + abs(a[1] - g_c0)) < (abs(b[0] - g_r0) + abs(b[1] - g_c0));
 		}
-		Node(int x,int y,int x0,int y0)
+		struct Node
 		{
-			r = x;
-			c = y;
-			r0 = x0;
-			c0 = y0;
-		}
-	};
-	vector<vector<int>> allCellsDistOrder(int R, int C, int r0, int c0) {
-		vector<Node> v;
-		for (int i = 0; i < R; ++i)
-		{
-			for (int j = 0; j < C; ++j)
+			int r,c;
+			int r0,c0;
+			bool operator <(Node a) const  
 			{
-				Node n(i,j,r0,c0);
-				v.push_back(n);
+				return abs(r - r0) + abs(c - c0) < abs(a.r - r0) + abs(a.c - c0);
 			}
+			Node(int x,int y,int x0,int y0)
+			{
+				r = x;
+				c = y;
+				r0 = x0;
+				c0 = y0;
+			}
+		};
+		vector<vector<int>> allCellsDistOrder(int R, int C, int r0, int c0) {
+			vector<Node> v;
+			for (int i = 0; i < R; ++i)
+			{
+				for (int j = 0; j < C; ++j)
+				{
+					Node n(i,j,r0,c0);
+					v.push_back(n);
+				}
+			}
+			sort(v.begin(),v.end());
+			vector<vector<int>> res;
+			for (auto item : v)
+			{
+				res.push_back({item.r, item.c});	
+			}
+			return res;
 		}
-		sort(v.begin(),v.end());
-		vector<vector<int>> res;
-		for (auto item : v)
+		int sub_max(vector<int> &A, int L, int M)
 		{
-			res.push_back({item.r, item.c});	
+			int ans = 0;
+			for (int i = 0; i < A.size(); ++i)	
+			{
+				// solve for 0->i-1
+				int sum = 0;
+				int ret = 0;
+				int sum_m = 0;
+				int ret_m = 0;
+				if (i >= L)
+				{
+					for (int j = 0; j < i;++j)
+					{
+						sum += A[j];
+						if (j >= L)
+						{
+							sum -= A[j-L];
+							ret = max(ret, sum);
+						}
+					}
+				}
+				if (A.size() - i >= M)	
+				{
+					for (int j = i; j < A.size(); ++j)
+					{
+						sum_m += A[j];
+						if (j - i >= M)
+						{
+							sum_m -= A[j - M];
+							ret_m = max(ret_m, sum_m);	
+						}
+					}
+				}
+				ans = max(ret, ret_m);
+				// solve for i->n-1
+			}
+			return ans;
 		}
-		return res;
-    }
-	int maxSumTwoNoOverlap(vector<int>& A, int L, int M) {
-		int ans = 0;
-		for (int i = 0; i < A.size(); ++i)
-		{
-			int ind_ans = 0;
-			for (int j = i+1; j < L && j < A.size(); ++j)
-			{
-				ind_ans += A[j];
-			}
-			for (int j = 0; j < M && j < i; ++j)
-			{
-				ind_ans += A[j];
-			}
-			for (int j = i + L; j < M && j < A.size(); ++j)
-			{
-				ind_ans += A[j];
-			}
-			cout<<ind_ans<<endl;
-			ans = max(ans, ind_ans);
+		int maxSumTwoNoOverlap(vector<int>& A, int L, int M) {
+			return max(sub_max(A,L,M), sub_max(A,M,L));
 		}
-    }
 };
 
 int main ()
@@ -186,10 +207,8 @@ int main ()
 	ios::sync_with_stdio (false);
 	cin.tie (nullptr);
 	cout.tie (nullptr);
-	string line;
-	while (cin >> line)
-	{
-		cout << removeOuterParentheses (line) << endl;
-	}
+	vector<int> v = {0,6,5,2,2,5,1,9,4};
+	Solution tmp;
+	cout<<tmp.maxSumTwoNoOverlap(v,1,2)<<endl;
 	return 0;
 }

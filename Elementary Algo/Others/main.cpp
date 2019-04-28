@@ -88,7 +88,67 @@ public:
 		}
 		return cnt;
     }
+	vector<vector<int>> generate(int numRows) {
+		vector<vector<int>> ans;
+		if (numRows == 0)
+		{
+			return ans;
+		}
+		else
+		{
+			vector<int> cur_row{1};
+			ans.push_back(cur_row);
+			for (int i = 1; i < numRows; ++i )
+			{
+				vector<int> cur_row{1};
+				vector<int> prev = ans[i-1];
+				for (int j = 1; j <= i - 1; ++j)
+				{
+					cur_row.push_back(prev[j-1] + prev[j]);
+				}
+				cur_row.push_back(1);
+				//cout<<cur_row.size()<<endl;
+				ans.push_back(cur_row);
+			}
+			//cout<<ans.size()<<endl;
+			return ans;
+		}
+    }
+	bool isValid(string s) {
+		std::stack<char> st;
+		for (int i = 0; i < s.size(); ++i)
+		{
+			if (st.empty() == true)
+			{
+				st.push(s[i]);
+			}
+			else
+			{
+				if (s[i] == '(' && st.top() == ')')
+				{
+					st.pop();
+				}
+				else if (s[i] == '[' && st.top() == ']')
+				{
+					st.pop();
+				}
+				else if (s[i] == '{' && st.top() == '}')
+				{
+					st.pop();
+				}
+				else
+				{
+					cout<<s[i]<<endl;
+				}
+			}
+		}
+		return st.empty();
+    }
+	int missingNumber(vector<int>& nums) {
+		
+	}
 };
+
 
 int main ()
 {
@@ -98,6 +158,8 @@ int main ()
 	ios::sync_with_stdio (false);
 	cin.tie (nullptr);
 	cout.tie (nullptr);
+	Solution a;
+	a.generate(5);
 	return 0;
 }
 
