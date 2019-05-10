@@ -45,9 +45,53 @@ const double eps = 1e-8;
 const int INF = 0x3f3f3f3f;
 class Solution {
 public:
-    int numIslands(vector<vector<char>>& grid) {
-        
-    }
+	int n,m;
+	set<pair<int, int>> st;
+	int dx[4] = {0,0,1,-1};
+	int dy[4] = {1,-1,0,0};
+	void bfs(vector<vector<char>> & grid, int x, int y)
+	{
+		std::queue<pair<int, int>> Q;
+		while(!Q.empty())
+		{
+			Q.pop();
+		}
+		Q.push(make_pair(x,y));
+		while(!Q.empty())
+		{
+			pair<int, int> cur = Q.front();
+			st.insert(cur);
+			for (int i = 0; i < 4; ++i)
+			{
+				pair<int, int> next;
+				next.first = cur.first + dx[i];
+				next.second = cur.second + dy[i];
+				if (next.first >= 0 && next.first < n && next.second >= 0 && next.second < m && st.count(next) != 1 && grid[next.first][next.second] == '1')
+				{
+					Q.push(next);
+				}
+			}
+		}
+	}
+	int numIslands(vector<vector<char>>& grid)
+	{
+		st.clear();
+		int cnt = 0;
+		n = grid.size();
+		m = grid[0].size();
+		for (int i = 0; i < n; ++i)
+		{
+			for (int j = 0; j < m; ++j)
+			{
+				if (grid[i][j] == '1' && st.count(make_pair(i, j)) == 0)
+				{
+					cnt += 1;
+					bfs(grid, i, j);
+				}
+			}
+		}
+		return cnt;
+	}
 };
 
 int main ()

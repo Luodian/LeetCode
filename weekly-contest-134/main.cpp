@@ -87,7 +87,7 @@ void dfs (vector<vector<int>> &grid, int r, int c, int r0, int c0, int consisten
 		{
 			for (int j = -1; j <= 1; ++j)
 			{
-				if (abs (i) = !abs (j))
+				if (abs (i) != abs (j))
 				{
 					dfs (grid, r, c, r0 + i, c0 + j, consistent_color, color);
 				}
@@ -141,6 +141,32 @@ vector<vector<int>> colorBorder (vector<vector<int>> &grid, int r0, int c0, int 
 	int c_color = grid[r0][c0];
 	dfs (grid, r, c, r0, c0, c_color, color);
 	return grid;
+}
+
+set<pair<int, int>> st;
+bool dfs_escape (int sx, int sy, int tx, int ty)
+{
+	if ((sx == tx && sy == ty) || (st.size () > (200 - 1) * 200 / 2))
+	{
+		return true;
+	}
+	else if (sx < 0 || sy < 0 || sx > 1e6-1 || sy > 1e6-1 || st.count (make_pair (tx, ty)) != 0)
+	{
+		return false;
+	}
+	st.insert (make_pair (tx, ty));
+	return dfs_escape (sx - 1, sy, tx, ty) || dfs_escape (sx, sy - 1, tx, ty) || dfs_escape (sx + 1, sy, tx, ty)
+	       || dfs_escape (sx, sy + 1, tx, ty);
+}
+
+bool isEscapePossible (vector<vector<int>> &blocked, vector<int> &source, vector<int> &target)
+{
+	st.clear ();
+	for (auto &i : blocked)
+	{
+		st.insert (make_pair (i[0], i[1]));
+	}
+	return dfs_escape(source[0],source[1],target[0],target[1]) && dfs_escape(target[0], target[1], source[0], source[1]);
 }
 
 int maxUncrossedLines (vector<int> &A, vector<int> &B)
