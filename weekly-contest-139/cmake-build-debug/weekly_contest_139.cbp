@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="weekly_contest_139"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="weekly_contest_139">
+				<Option output="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/weekly_contest_139" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 weekly_contest_139"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="weekly_contest_139/fast">
+				<Option output="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/weekly_contest_139" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 weekly_contest_139/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/main.cpp">
+			<Option target="weekly_contest_139"/>
+		</Unit>
+		<Unit filename="/Users/luodian/Documents/GitHub/LeetCode/weekly-contest-139/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

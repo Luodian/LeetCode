@@ -197,6 +197,19 @@ class Solution {
 		int maxSumTwoNoOverlap(vector<int>& A, int L, int M) {
 			return max(sub_max(A,L,M), sub_max(A,M,L));
 		}
+		int heightChecker(vector<int>& heights) {
+			int revers_cnt = 0;
+			vector<int> bk = heights;
+			sort(heights.begin(), heights.end());
+			for (int i = 0; i < heights.size(); ++i)
+			{
+				if (bk[i] != heights[i])
+				{
+					revers_cnt += 1;
+				}
+			}
+			return revers_cnt;
+		}
 };
 
 int main ()
