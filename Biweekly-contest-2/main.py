@@ -94,47 +94,44 @@ class Solution:
 		else:
 			return sorted(st[0])
 	
-	def confusingNumber(self, N):
-		"""
-		:type N: int
-		:rtype: bool
-		"""
-		# 如 0, 1, 6, 8, 9 旋转 180° 以后，得到了新的数字 0, 1, 9, 8, 6 。
-		# 2, 3, 4, 5, 7 旋转 180° 后,得到的不是数字。
+	cnt = 0
+	V = [0, 1, 8, 6, 9]
+	mp = {0: 0, 1: 1, 8: 8, 6: 9, 9: 6}
+	
+	
+	def cache(func):
+		from functools import wraps
+		caches = {}
+		@wraps(func)
+		def wrap(*args):
+			if args not in caches:
+				caches[args] = func(*args)
+			return caches[args]
 		
-		mapping = {0: 0, 1: 1, 6: 9, 8: 8, 9: 6}
-		invalid = [2, 3, 4, 5, 7]
+		return wrap
+	
+	def dfs(self, cur: int, rev: int, base: int, N: int) -> None:
+		if base > 1e9:
+			return
+		if cur > N:
+			return
 		
-		n = N
-		tmp = 0
-		res = list()
-		while (n):
-			n, tmp = divmod(n, 10)
-			if tmp in invalid:
-				return False
-			res.append(mapping[tmp])
+		if cur != rev:
+			self.cnt += 1
 		
-		res = res[::-1]
-		r = 0
-		for i, x in enumerate(res):
-			r += 10 ** i * x
-		
-		return r != N
+		for item in self.V:
+			if cur == 0 and item == 0:
+				continue
+			self.dfs(cur * 10 + item, self.mp[item] * base + rev, base * 10, N)
+	
+	dfs_with_cache = cache(dfs)
 	
 	def confusingNumberII(self, N: int) -> int:
-		ans = []
-		cnt = 0
-		for i in range(1, int(1e9 + 1)):
-			if self.confusingNumber(i):
-				cnt += 1
-				ans.append(cnt)
-		
-		return ans
+		self.dfs_with_cache(0, 0, 1, N)
+		return self.cnt
 
-# 199999999
+
 sample_func = Solution()
-sample_input = 100
+sample_input = 100000000
 ans = sample_func.confusingNumberII(sample_input)
-file = open("a.txt")
-file.write(ans)
-file.close()
+print(ans)
