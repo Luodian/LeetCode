@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e0e7f9a-27ee-447f-a8a8-1b8d209cba23" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Wild_Card/CometOJ_Pokemon/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/.debug.out.swp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/.main.cpp.swp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secondary_Algo/Stack_DFS/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Secondary_Algo/Stack_DFS/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-contest-142/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/weekly-contest-142/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/LeetCode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/LeetCode.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/cmake-build-debug/Queue_Stack" beforeDir="false" afterPath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/cmake-build-debug/Queue_Stack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/main.out" beforeDir="false" afterPath="$PROJECT_DIR$/Secondary_Algo/Queue_Stack/main.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weekly-contest-133/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/weekly-contest-133/main.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +24,17 @@
     <SUITE FILE_PATH="coverage/LeetCode$reverseInt.coverage" NAME="reverseInt Coverage Results" MODIFIED="1532864197674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/weekly-contest-142/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="30" selection-start-line="30" selection-end-line="46" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -40,6 +53,7 @@
         <option value="$PROJECT_DIR$/reverse_str.py" />
         <option value="$PROJECT_DIR$/reverseString.py" />
         <option value="$PROJECT_DIR$/reverseInt.py" />
+        <option value="$PROJECT_DIR$/weekly-contest-142/main.py" />
       </list>
     </option>
   </component>
@@ -57,18 +71,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="LeetCode" type="b2602c69:ProjectViewProjectNode" />
-              <item name="LeetCode" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -78,6 +82,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -91,7 +100,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.reverseInt">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="LeetCode" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/weekly-contest-142" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weekly-contest-142/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="reverseInt" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="LeetCode" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -139,9 +170,11 @@
     <list>
       <item itemvalue="Python.reverseString" />
       <item itemvalue="Python.reverseInt" />
+      <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.reverseInt" />
         <item itemvalue="Python.reverseString" />
       </list>
@@ -158,22 +191,24 @@
       <option name="presentableId" value="Default" />
       <updated>1532860266524</updated>
       <workItem from="1559837950107" duration="3000" />
+      <workItem from="1561256883325" duration="3170000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3000" />
+    <option name="totallyTimeSpent" value="3173000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1002" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16910867" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13186814" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.48892406" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991462" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.38556933" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990981" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -201,8 +236,37 @@
           <url>file://$PROJECT_DIR$/reverseInt.py</url>
           <line>9</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weekly-contest-142/main.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weekly-contest-142/main.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weekly-contest-142/main.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weekly-contest-142/main.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/weekly-contest-142/main.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LeetCode$main.coverage" NAME="main Coverage Results" MODIFIED="1561260337275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/weekly-contest-142" />
+    <SUITE FILE_PATH="coverage/LeetCode$reverseInt.coverage" NAME="reverseInt Coverage Results" MODIFIED="1561257515156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Soduko.cpp" />
@@ -210,5 +274,30 @@
     <entry file="file://$PROJECT_DIR$/soduko.py" />
     <entry file="file://$PROJECT_DIR$/reverseString.py" />
     <entry file="file://$PROJECT_DIR$/reverseInt.py" />
+    <entry file="file://$PROJECT_DIR$/Solutions/Biweekly-Contest-2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secondary_Algo/Stack_DFS/main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Secondary_Algo/Queue_Stack/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weekly-contest-142/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="30" selection-start-line="30" selection-end-line="46" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

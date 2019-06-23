@@ -165,6 +165,90 @@ class Solution
 		ans.push_back (0);
 		return ans;
 	}
+	vector<double> sampleStats (vector<int> &count)
+	{
+		double common_value = 0;
+		int max_ind = -1;
+		double avg_value = 0;
+		for (int i = 0; i < count.size (); ++i)
+		{
+			if (count[i] != 0)
+			{
+				if (count[i] > max_ind)
+				{
+					max_ind = count[i];
+					common_value = i;
+				}
+				avg_value += (i * count[i]);
+			}
+		}
+		double max_value, min_value, mid_value;
+		for (int i = 0; i < count.size (); ++i)
+		{
+			if (count[i] != 0)
+			{
+				min_value = i;
+				break;
+			}
+		}
+		for (int i = 255; i >= 0; --i)
+		{
+			if (count[i] != 0)
+			{
+				max_value = i;
+				break;
+			}
+		}
+		int sum_of = std::accumulate (count.begin (), count.end (), 0);
+		int mid = sum_of / 2;
+		if (sum_of % 2 == 0)
+		{
+			int ind = 0;
+			int part_value_1 = 0;
+			int part_value_2 = 0;
+			for (int i = 0; i < 255; ++i)
+			{
+				if (count[i] != 0)
+				{
+					if (mid >= ind && mid <= ind + count[i])
+					{
+						part_value_1 = i;
+					}
+					if (mid - 1 >= ind && mid - 1 <= ind + count[i])
+					{
+						part_value_2 = i;
+					}
+					ind += count[i];
+				}
+			}
+			mid_value = (part_value_1 + part_value_2) * 1.0 / 2;
+		}
+		else
+		{
+			int ind = 0;
+			int part_value = 0;
+			for (int i = 0; i < 255; ++i)
+			{
+				if (count[i] != 0)
+				{
+					if (mid >= ind && mid <= ind + count[i])
+					{
+						part_value = i;
+					}
+				}
+				ind += count[i];
+			}
+			mid_value = part_value;
+		}
+		avg_value /= 1.0 * sum_of;
+		vector<double> ans;
+		ans.push_back (min_value);
+		ans.push_back (max_value);
+		ans.push_back (avg_value);
+		ans.push_back (mid_value);
+		ans.push_back (common_value);
+		return ans;
+	}
 };
 
 int main ()
@@ -176,8 +260,18 @@ int main ()
 	cin.tie (nullptr);
 	cout.tie (nullptr);
 	Solution a;
-	std::vector<int> v = {89, 62, 70, 58, 47, 47, 46, 76, 100, 70};
-	std::vector<int> ret = a.dailyTemperatures (v);
+	std::vector<int> v = {0, 1, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	                      0, 0, 0, 0, 0, 0, 0,
+	                      0
+	};
+	std::vector<double> ret = a.sampleStats (v);
 	for (auto item : ret)
 	{
 		cout << item << endl;
